@@ -1,0 +1,43 @@
+﻿using System;
+
+namespace ejerciciosSemana2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Desarrollar un metodo dentro de un programa C#, que muestre en pantalla
+            //el valor de la suma de los n numeros pares que se encuentren entre
+            //un rango de valores que el usuario indique.
+
+            Console.WriteLine("Sumemos los numeros pares en un rango de numeros");
+            Console.WriteLine("Digita el valor minimo en nuestro rango: ");
+            int min = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digita el valor maximo en nuestro rango: ");
+            int max = int.Parse(Console.ReadLine());
+
+            int sumar = SumaNumerosPares(min, max);
+
+            Console.WriteLine($"La suma de los numeros pares entre {min} y {max}, es: {sumar}");
+
+            //no cerrar consola
+            Console.ReadLine();
+
+        }
+
+        static int SumaNumerosPares(int min, int max)
+        {
+            int sumar = 0;
+            for (int i = min; i <= max; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sumar += i;
+                }
+            }
+            return sumar;
+        }
+
+    }
+}
